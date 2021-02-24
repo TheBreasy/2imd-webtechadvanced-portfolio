@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+div {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.gap {
+    gap: 0.5em;
+}
+
+.pink-box {
+    padding: 1em 2em;
+    background-color: deeppink;
+}
+
+.yellow-box {
+    padding: 1em 2em;
+    background-color: yellow;
+}
+
+.blue-box {
+    padding: 1em 2em;
+    background-color: cyan;
+}
