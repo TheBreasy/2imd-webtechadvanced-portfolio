@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    position: relative;
+
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    z-index: -1;
+    background-image: url("../images/festival.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.grid {
+    display: grid;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.5em 0;
+}
+
+.header h1 {
+    letter-spacing: 8px;
+    font-size: 2em;
+    margin: 0;
+}
+
+.header p {
+    letter-spacing: 5px;
+    font-size: 0.7em;
+    margin: 0;
+}
+
+.image {
+    text-align: center;
+    padding: 5em 0;
+}
+
+.image img {
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.ticket-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.ticket-details div {
+    border: 1px solid black;
+    padding: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.date {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admit {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price {
+    grid-column: -3 / -1;
+    grid-row: 2;
+}
+
+.display-none {
+    display: none;
+}
