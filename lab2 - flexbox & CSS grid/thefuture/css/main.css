@@ -37,3 +37,26 @@ div {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+@media(min-width: 730px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .blue-box {
+        grid-column: 3;
+        grid-row: 1 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .yellow-box {
+        grid-column: 4 / 6;
+        grid-row: -3 / -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
