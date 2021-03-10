@@ -1,6 +1,7 @@
 class Note {
     constructor(title) {
         this.title = title;
+        this.element = this.createElement(title);
         // HINT🤩 this.element = this.createElement(title);
     }
 
@@ -8,22 +9,23 @@ class Note {
         let newNote = document.createElement("li");
 
         // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
+        newNote.addEventListener('click', this.remove.bind(newNote));
+        newNote.innerHTML = title;
 
         return newNote;
     }
 
-    add(note) {
+    add() {
         // HINT🤩
         // this function should append the note to the screen somehow
-        document.querySelector("#taskList").appendChild(note);
+        let tasks = document.querySelector("#taskList");
+        tasks.appendChild(this.element);
     }
 
     saveToStorage() {
         // HINT🤩
         // localStorage only supports strings, not arrays
         // if you want to store arrays, look at JSON.parse and JSON.stringify
-
-
     }
 
     remove() {
@@ -37,7 +39,6 @@ class Note {
 class App {
     constructor() {
         console.log("👊🏼 The Constructor!");
-
         // HINT🤩
         // pressing the enter key in the text field triggers the createNote function
         // this.txtTodo = ???
@@ -45,6 +46,9 @@ class App {
         // read up on .bind() -> we need to pass the current meaning of this to the eventListener
         // when the app loads, we can show previously saved noted from localstorage
         // this.loadNotesFromStorage();
+        this.txtTodo = document.querySelector("#taskInput");
+        this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
+        this.loadNotesFromStorage();
     }
 
     loadNotesFromStorage() {
@@ -59,6 +63,13 @@ class App {
         // note.saveToStorage();
         // clear the text field with .reset in this class
         // if (e.key === "Enter")
+        if (e.key === "Enter") {
+            e.preventDefault();
+            let note = new Note(this.txtTodo.value);
+            this.reset();
+            note.add(note.element);
+            note.saveToStorage();
+        }
     }
 
     reset() {
