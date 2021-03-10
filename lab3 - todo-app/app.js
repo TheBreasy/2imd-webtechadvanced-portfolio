@@ -39,6 +39,15 @@ class Note {
         // remove the item from screen and from localstorage
         let tasks = document.querySelector("#taskList");
         tasks.removeChild(this);
+
+        let value = this.innerText;
+
+        let savedNotes = localStorage.getItem("savedNotes");
+        savedNotes = JSON.parse(savedNotes) || [];
+
+        let index = savedNotes.indexOf(value);
+        savedNotes.splice(index, 1);
+        localStorage.setItem("savedNotes", JSON.stringify(savedNotes));
     }
 }
 
@@ -60,6 +69,14 @@ class App {
     loadNotesFromStorage() {
         // HINT🤩
         // load all notes from storage here and add them to the screen
+        let savedNotes = localStorage.getItem("savedNotes");
+        savedNotes = JSON.parse(savedNotes);
+        if (savedNotes != null ) {
+            for (let i = 0; i < savedNotes.length; i++) {
+                let note = new Note(savedNotes[i]);
+                note.add();
+            }
+        }
     }
 
     createNote(e) {
