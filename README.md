@@ -15,3 +15,7 @@ Codepen link to Grid ticket excercise: https://codepen.io/brian-cautaerts/pen/rN
 ## Lab 3
 
 Codepen link to Todo app sandbox: https://codesandbox.io/s/lab-3-todo-app-xvo5j
+
+## Lab 4
+
+Link to repository: https://github.com/TheBreasy/2imd-webtechadvanced-portfolio/tree/lab4/lab4%20-%20weather%20%26%20location%20ad
