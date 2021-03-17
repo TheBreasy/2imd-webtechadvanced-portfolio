@@ -31,7 +31,7 @@ class App {
         if(this.temperature == null) {
             fetch(url)
                 .then(response => {
-                    //console.log("didn't take data from localstorage");
+                    console.log("didn't take data from localstorage");
                     console.log(response);
                     return response.json();
                 })
@@ -42,7 +42,7 @@ class App {
                     document.querySelector("#weather").innerHTML = "It's " + getTemperature + "°C";
                 })
         } else {
-            //console.log("took data from localstorage");
+            console.log("took data from localstorage");
             document.querySelector("#weather").innerHTML = "It's " + this.temperature + "°C";
         }
 
@@ -106,7 +106,6 @@ class App {
         if((timeNow - lastclear) > 1000 * 60 * 60){
             localStorage.clear();
             localStorage.setItem("lastclear", timeNow);
-            console.log("er is een uur voorbij");
         }
         this.temperature = localStorage.getItem("temperature");
         this.temperature = JSON.parse(this.temperature);
